@@ -1337,7 +1337,8 @@ the selected window to a wrong buffer.")
     t))
 
 (defun persp-special-last-buffer-make-current ()
-  (setq persp-special-last-buffer (current-buffer)))
+  (unless (equal spacemacs-buffer-name (buffer-name))
+    (setq persp-special-last-buffer (current-buffer))))
 
 
 ;; Auto persp functions:
